@@ -71,7 +71,7 @@ def checkout(cart, coupons)
   cons_coup_clear_cart = apply_clearance(cons_coup_cart)
   cons_coup_clear_cart.reduce(nil) do |total, item|
     binding.pry
-    itemprice = item[2][:price] * item[2][:count]
+    itemprice = item[1][:price] * item[1][:count]
     total = total + itemprice
     binding.pry
   end
