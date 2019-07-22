@@ -73,4 +73,5 @@ def checkout(cart, coupons)
     itemprice = item[2][:price] * item[2][:count]
     total = total + itemprice
   end
+  
 end
