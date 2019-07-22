@@ -29,7 +29,10 @@ def apply_coupons(cart, coupons)
             
           end
         else 
-          couponcart[item]
+          couponcart[item.keys[0]] = {}
+          couponcart[item.keys[0]][:price] = item[item.keys[0]][:price]
+          couponcart[item.keys[0]][:clearance] = item[item.keys[0]][:clearance]
+          couponcart[item.keys[0]][:count] = 
         end
       end
   end
