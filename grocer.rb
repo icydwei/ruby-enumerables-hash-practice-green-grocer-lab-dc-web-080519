@@ -40,6 +40,7 @@ def apply_coupons(cart, coupons = {})
               couponcart[couponitemname][:price] = coupon[:cost]/coupon[:num]
               couponcart[couponitemname][:clearance] = item[1][:clearance]
               couponcart[couponitemname][:count] = coupon[:num]
+              binding.pry
             end
           end
         end
@@ -69,9 +70,9 @@ def checkout(cart, coupons)
   total = 0
   checkout_cart = {}
   checkout_cart = consolidate_cart(cart)
-  binding.pry
+  #binding.pry
   checkout_cart = apply_coupons(checkout_cart, coupons)
-  binding.pry
+  #binding.pry
   checkout_cart = apply_clearance(checkout_cart)
   #binding.pry
   checkout_cart.each do |item|
