@@ -50,8 +50,15 @@ def apply_coupons(cart, coupons = {})
 end
 
 def apply_clearance(cart)
+  clearancecart = {}
   cart.each do |item|
-    
+    clearancecart[item[0]] = {}
+    clearancecart[item[0]][:price] = item[1][:price]
+    clearancecart[item[0]][:clearance] = item[1][:clearance]
+    clearancecart[item[0]][:count] = item[1][:count]
+    if clearancecart[item[0]][:clearance] == true
+      clearancecart[item[0]][:price] = clearancecart[item[0]][:price]
+  end  
 end
 
 def checkout(cart, coupons)
