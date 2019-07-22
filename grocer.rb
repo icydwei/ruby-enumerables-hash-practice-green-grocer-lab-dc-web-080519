@@ -66,9 +66,10 @@ end
 
 def checkout(cart, coupons)
   #binding.pry
-  cons_cart = consolidate_cart(cart)
-  cons_coup_cart = apply_coupons(cons_cart, coupons)
-  checkout_cart = apply_clearance(cons_coup_cart)
+  checkout_cart = {}
+  checkout_cart = consolidate_cart(cart)
+  checkout_cart = apply_coupons(checkout_cart, coupons)
+  checkout_cart = apply_clearance(checkout_cart)
   checkout_cart.each do |item|
     #binding.pry
     itemprice = item[1][:price] * item[1][:count]
