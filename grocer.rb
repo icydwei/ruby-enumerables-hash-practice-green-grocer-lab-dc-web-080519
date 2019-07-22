@@ -65,10 +65,10 @@ def apply_clearance(cart)
 end
 
 def checkout(cart, coupons)
-  consolidate_cart(cart)
-  apply_coupons(cart, coupons)
-  apply_clearance(cart)
-  cart.collect do |total, item|
+  cons_cart = consolidate_cart(cart)
+  cons_coup_cart = apply_coupons(cons_cart, coupons)
+  cons_coup_clear_cart = apply_clearance(cons_coup_cart)
+  cons_coup_clear_cart.collect do |total, item|
     binding.pry
   end
 end
