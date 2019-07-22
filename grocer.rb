@@ -68,5 +68,7 @@ def checkout(cart, coupons)
   consolidate_cart(cart)
   apply_coupons(cart, coupons)
   apply_clearance(cart)
-  
+  cart.collect do |total, item|
+    binding.pry
+  end
 end
