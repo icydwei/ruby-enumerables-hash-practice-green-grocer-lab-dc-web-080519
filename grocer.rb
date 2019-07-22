@@ -27,7 +27,9 @@ def apply_coupons(cart, coupons)
           binding.pry
           if item[1][:count] > coupon[:num]
             item[1][:count] = item[1][:count] - coupon[:num]
-            couponitemname = item[1][:price]
+            couponitemname = item[0] + " W/COUPON"
+            couponcart[couponitemname] = {}
+            couponcart[couponitemname][:price] = coupon
           end
         else 
           couponcart[item.keys[0]] = {}
