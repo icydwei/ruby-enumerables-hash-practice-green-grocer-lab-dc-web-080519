@@ -73,7 +73,7 @@ def checkout(cart, coupons)
     #binding.pry
     itemprice = item[1][:price] * item[1][:count]
     total = total + itemprice
-    binding.pry
+    #binding.pry
   end
   if total > 100
     total = (total * 0.9).round(2)
