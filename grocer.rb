@@ -57,6 +57,7 @@ def apply_clearance(cart)
     clearancecart[item[0]][:clearance] = item[1][:clearance]
     clearancecart[item[0]][:count] = item[1][:count]
     if clearancecart[item[0]][:clearance] == true
+      binding.pry
       clearancecart[item[0]][:price] = (clearancecart[item[0]][:price]*0.2).round(2)
     end
   end
