@@ -22,7 +22,7 @@ def apply_coupons(cart, coupons)
     #binding.pry
       coupons.each do |coupon|
         binding.pry
-        if cart.include?(coupon.keys[0])
+        if cart.include?(coupon[:item])
           binding.pry
         end
       end
