@@ -18,13 +18,18 @@ def consolidate_cart(cart)
 end
 
 def apply_coupons(cart, coupons)
+  couponcart = {}
   cart.each do |item|
     #binding.pry
       coupons.each do |coupon|
         binding.pry
         if cart.include?(coupon[:item])
           binding.pry
-          if item[1][:count] > coupon
+          if item[1][:count] > coupon[:num]
+            
+          end
+        else 
+          couponcart[item]
         end
       end
   end
