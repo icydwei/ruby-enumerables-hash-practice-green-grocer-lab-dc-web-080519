@@ -19,7 +19,9 @@ end
 
 def apply_coupons(cart, coupons)
   cart.each do |item|
-    binding.pry
+    #binding.pry
+      coupons.each do |coupon|
+        binding.pry
   end
 end
 
