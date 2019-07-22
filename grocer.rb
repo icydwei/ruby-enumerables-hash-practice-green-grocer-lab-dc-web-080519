@@ -22,11 +22,14 @@ def apply_coupons(cart, coupons)
   cart.each do |item|
     #binding.pry
       coupons.each do |coupon|
-        binding.pry
+        #binding.pry
         if cart.include?(coupon[:item])
-          binding.pry
+          #binding.pry
           if item[1][:count] > coupon[:num]
-            item[1][:count] = item[1][:count] - coupon[:num]
+            couponcart[item[0]] = {}
+            couponcart[item[0]][:price] = item[1][:price]
+            couponcart[item[0]][:clearance] = item[1][:clearance]
+            couponcart[item[0]][:count] = item[1][:count] - coupon[:num]
             couponitemname = item[0] + " W/COUPON"
             couponcart[couponitemname] = {}
             couponcart[couponitemname][:price] = coupon[:cost]/coupon[:num]
@@ -41,10 +44,10 @@ def apply_coupons(cart, coupons)
             couponcart[couponitemname][:count] = coupon[:num]
           end  
         else 
-          couponcart[item.keys[0]] = {}
-          couponcart[item.keys[0]][:price] = item[1][:price]
-          couponcart[item.keys[0]][:clearance] = item[1][:clearance]
-          couponcart[item.keys[0]][:count] = item[1][:count]
+          couponcart[item[0]] = {}
+          couponcart[item[0]][:price] = item[1][:price]
+          couponcart[item[0]][:clearance] = item[1][:clearance]
+          couponcart[item[0]][:count] = item[1][:count]
         end
       end
   end
