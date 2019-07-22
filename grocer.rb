@@ -33,6 +33,9 @@ def apply_coupons(cart, coupons)
             couponcart[couponitemname][:clearance] = item[1][:clearance]
             couponcart[couponitemname][:count] = coupon[:num]
           end
+          if item[1][:count] == coupon[:num]
+            
+          end  
         else 
           couponcart[item.keys[0]] = {}
           couponcart[item.keys[0]][:price] = item[1][:price]
