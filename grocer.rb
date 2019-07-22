@@ -21,9 +21,10 @@ def apply_coupons(cart, coupons)
   cart.each do |item|
     #binding.pry
       coupons.each do |coupon|
-        binding.pry
+        #binding.pry
         if cart.include?(coupon.keys[0])
-      end
+          binding.pry
+        end
       end
   end
 end
