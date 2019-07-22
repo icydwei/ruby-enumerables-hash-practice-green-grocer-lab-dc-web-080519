@@ -68,12 +68,12 @@ def checkout(cart, coupons)
   #binding.pry
   cons_cart = consolidate_cart(cart)
   cons_coup_cart = apply_coupons(cons_cart, coupons)
-  cons_coup_clear_cart = apply_clearance(cons_coup_cart)
-  cons_coup_clear_cart.reduce(nil) do |total, item|
+  checkout_cart = apply_clearance(cons_coup_cart)
+  checkout_cart.reduce(nil) do |total, item|
     #binding.pry
     itemprice = item[1][:price] * item[1][:count]
     total = total + itemprice
-    #binding.pry
+    binding.pry
   end
   if total > 100
     total = (total * 0.9).round(2)
