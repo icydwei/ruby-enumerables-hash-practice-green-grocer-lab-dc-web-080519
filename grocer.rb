@@ -40,7 +40,7 @@ def apply_coupons(cart, coupons = {})
               couponcart[couponitemname][:price] = coupon[:cost]/coupon[:num]
               couponcart[couponitemname][:clearance] = item[1][:clearance]
               couponcart[couponitemname][:count] = coupon[:num]
-              binding.pry
+              #binding.pry
             end
           end
         end
