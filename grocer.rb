@@ -24,7 +24,7 @@ def apply_coupons(cart, coupons = {})
       coupons.each do |coupon|
         #binding.pry
         if cart.include?(coupon[:item])
-          binding.pry
+          #binding.pry
           if item[1][:count] >= coupon[:num]
             #binding.pry
             couponcart[item[0]] = {}
