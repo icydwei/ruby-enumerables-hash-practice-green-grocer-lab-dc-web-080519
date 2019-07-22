@@ -38,7 +38,8 @@ def apply_coupons(cart, coupons = {})
             couponcart[couponitemname][:count] = coupon[:num]
             cart[item[0]][:count] = (cart[item[0]][:count] - coupon[:num])
           end
-        else 
+        else
+          binding.pry
           couponcart[item[0]] = {}
           couponcart[item[0]][:price] = item[1][:price]
           couponcart[item[0]][:clearance] = item[1][:clearance]
