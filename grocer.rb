@@ -25,7 +25,7 @@ def apply_coupons(cart, coupons = {})
         #binding.pry
         if cart.include?(coupon[:item])
           #binding.pry
-          if item[1][:count] > coupon[:num]
+          if item[1][:count] >= coupon[:num]
             couponcart[item[0]] = {}
             couponcart[item[0]][:price] = item[1][:price]
             couponcart[item[0]][:clearance] = item[1][:clearance]
@@ -36,13 +36,6 @@ def apply_coupons(cart, coupons = {})
             couponcart[couponitemname][:clearance] = item[1][:clearance]
             couponcart[couponitemname][:count] = coupon[:num]
           end
-          if item[1][:count] == coupon[:num]
-            couponitemname = item[0] + " W/COUPON"
-            couponcart[couponitemname] = {}
-            couponcart[couponitemname][:price] = coupon[:cost]/coupon[:num]
-            couponcart[couponitemname][:clearance] = item[1][:clearance]
-            couponcart[couponitemname][:count] = coupon[:num]
-          end  
         else 
           couponcart[item[0]] = {}
           couponcart[item[0]][:price] = item[1][:price]
