@@ -30,6 +30,7 @@ def apply_coupons(cart, coupons)
             couponitemname = item[0] + " W/COUPON"
             couponcart[couponitemname] = {}
             couponcart[couponitemname][:price] = coupon[:cost]/coupon[:num]
+            couponcart[couponitemname][:clearance] = coupon[:cost]/coupon[:num]
           end
         else 
           couponcart[item.keys[0]] = {}
