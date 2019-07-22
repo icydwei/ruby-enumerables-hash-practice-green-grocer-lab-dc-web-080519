@@ -17,7 +17,7 @@ def consolidate_cart(cart)
   return final_cart
 end
 
-def apply_coupons(cart, coupons)
+def apply_coupons(cart, coupons = {})
   couponcart = {}
   cart.each do |item|
     #binding.pry
