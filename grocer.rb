@@ -31,7 +31,7 @@ def apply_coupons(cart, coupons = {})
           #binding.pry
           if couponcart[item[0]][:count] >= coupon[:num]
             #binding.pry
-            couponcart[item[0]][:count] = (item[1][:count] - coupon[:num])
+            couponcart[item[0]][:count] = (couponcart[item[0]][:count] - coupon[:num])
             couponitemname = item[0] + " W/COUPON"
             if couponcart[couponitemname]
               couponcart[couponitemname][:count] += coupon[:num]
